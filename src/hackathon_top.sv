@@ -3,6 +3,7 @@
 
 module hackathon_top
 (
+    /* verilator lint_off UNUSEDSIGNAL */
     input  logic       clock,
     input  logic       reset,
 
@@ -22,9 +23,17 @@ module hackathon_top
     output logic [4:0] red,
     output logic [5:0] green,
     output logic [4:0] blue
+    /* verilator lint_on UNUSEDSIGNAL */
 );
 
 assign led [0] = key [0] & key [1];
+
+assign led [7:1] = '0;
+assign abcdefgh  = '0;
+assign digit     = '0;
+assign red       = '0;
+assign green     = '0;
+assign blue      = '0;
 
 /*
     logic pulse;
