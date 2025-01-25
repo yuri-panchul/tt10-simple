@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_verilog_meetup_template_project_TODO
+module tt_um_yuri_panchul_and_gate
 (
     input  [7:0] ui_in,    // Dedicated inputs
     output [7:0] uo_out,   // Dedicated outputs
