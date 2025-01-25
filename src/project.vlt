@@ -1,0 +1,20 @@
+`ifdef VERILATOR
+`verilator_config
+
+// TIMESCALEMOD
+lint_off -rule TIMESCALEMOD
+
+// Direction of the bit range
+lint_off -rule ASCRANGE -file "*/tm1638_registers.sv" -match "* left < right of bit range: [0:7]"
+
+// Bits of signal are not used: 'tm_out'[7:5,3:1]
+lint_off -rule UNUSEDSIGNAL -file "*/tm1638_board.sv" -match "*'tm_out'[7:5,3:1]"
+
+// The msb-s of the vpos and hpos are not used
+lint_off -rule UNUSEDSIGNAL -file "*/layer_between_project_and_hackathon_top.sv" -match "*'hpos'[9]"
+lint_off -rule UNUSEDSIGNAL -file "*/layer_between_project_and_hackathon_top.sv" -match "*'vpos'[9]"
+
+// The msb-s of the key are not used.
+lint_off -rule UNUSEDSIGNAL -file "*/hackathon_top.sv" -match "*'key'[7:2]"
+
+`endif

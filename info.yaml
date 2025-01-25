@@ -1,0 +1,67 @@
+# Tiny Tapeout project information
+project:
+  title:        "Verilog Meetup Template TODO"  # Project title
+  author:       "Verilog Meetup Member TODO"    # Your name
+  discord:      "verilog_meetup_member_TODO"    # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "An ASIC project compatible with an FPGA project from BGM (basic-graphics-music) infrastructure. TODO"      # One line description of what your project does
+  language:     "SystemVerilog"  # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     25000000         # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2"  # TODO Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_verilog_meetup_template_project_TODO"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.vlt"
+    - "config.svh"
+    - "hackathon_top.sv"
+    - "lab_specific_board_config.svh"
+    - "layer_between_project_and_hackathon_top.sv"
+    - "project.v"
+    - "seven_segment_display.sv"
+    - "strobe_gen.sv"
+    - "swap_bits.svh"
+    - "tm1638_board.sv"
+    - "tm1638_registers.sv"
+    - "vga.sv"
+    # TODO: add SystemVerilog files if necessary
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "VGA red [1]"
+  uo[1]: "VGA green [1]"
+  uo[2]: "VGA blue [1]"
+  uo[3]: "VGA vsync"
+  uo[4]: "VGA red [0]"
+  uo[5]: "VGA green [0]"
+  uo[6]: "VGA blue [0]"
+  uo[7]: "VGA hsync"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: "output sticky_failure"
+  uio[5]: "TM1638 inout dio"
+  uio[6]: "TM1638 output clk"
+  uio[7]: "TM1638 output stb"
+
+# Do not change!
+yaml_version: 6
