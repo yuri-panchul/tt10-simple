@@ -24,6 +24,9 @@ module hackathon_top
     output logic [4:0] blue
 );
 
+assign led [0] = key [0] & key [1];
+
+/*
     logic pulse;
 
     strobe_gen # (.clk_mhz (27), .strobe_hz (30))
@@ -66,5 +69,6 @@ module hackathon_top
         .abcdefgh ( abcdefgh ),
         .digit    ( digit    )
     );
+*/
 
 endmodule
